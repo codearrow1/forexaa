@@ -1,0 +1,24 @@
+import { getRoute, buildPageSeo } from "@/lib/seo/page-meta";
+import { JsonLdGraph } from "@/components/shared/json-ld";
+import { ProductPage } from "@/components/templates/product-page";
+import { ibAffiliate } from "@/content/products";
+import { IbAffiliateVisual, IbAffiliateInterfaceScene } from "@/components/product/page-visuals";
+
+const route = getRoute("/broker-technology/ib-affiliate");
+const seo = buildPageSeo(route);
+export const metadata = seo.metadata;
+
+export default function Page() {
+  return (
+    <>
+      <JsonLdGraph nodes={seo.jsonLd} />
+      <ProductPage
+        path="/broker-technology/ib-affiliate"
+        product={ibAffiliate}
+        visual={<IbAffiliateVisual />}
+        interfaceScene={<IbAffiliateInterfaceScene />}
+        showAudience={false} 
+      />
+    </>
+  );
+}

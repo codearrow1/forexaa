@@ -1,26 +1,290 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+ * FOREXAA design tokens (Aurora Terminal). Semantic tokens only — components
+ * never reference raw hex. Base palette lives in --t-* variables.
+ * ------------------------------------------------------------------------- */
+
+@theme {
+  /* Base palette */
+  --t-obsidian: #07111f;
+  --t-deep-navy: #0d1b2e;
+  --t-deep-navy-raised: #11213a;
+  --t-ice-white: #f5f8fc;
+  --t-primary-dark: #0a1220;
+  --t-electric-cyan: #20d8e8;
+  --t-cyan-soft: #5fe7f2;
+  --t-ultraviolet: #725cff;
+  --t-violet-soft: #9a88ff;
+  --t-aurora-mint: #64f2c1;
+  --t-warning: #f5b04a;
+  --t-danger: #ff5c6e;
+  --t-muted: #7c8da3;
+
+  /* Semantic color tokens */
+  --color-background: var(--t-obsidian);
+  --color-foreground: var(--t-ice-white);
+  --color-obsidian: var(--t-obsidian);
+  --color-deep-navy: var(--t-deep-navy);
+  --color-deep-navy-raised: var(--t-deep-navy-raised);
+  --color-primary: var(--t-electric-cyan);
+  --color-primary-hover: var(--t-cyan-soft);
+  --color-secondary: var(--t-ultraviolet);
+  --color-secondary-soft: var(--t-violet-soft);
+  --color-success: var(--t-aurora-mint);
+  --color-warning: var(--t-warning);
+  --color-danger: var(--t-danger);
+  --color-text: var(--t-ice-white);
+  --color-text-muted: var(--t-muted);
+  --color-text-inverted: var(--t-primary-dark);
+  --color-surface: var(--t-deep-navy);
+  --color-surface-elevated: var(--t-deep-navy-raised);
+  --color-border: color-mix(in srgb, var(--t-ice-white) 12%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--t-ice-white) 22%, transparent);
+  --color-border-light: color-mix(in srgb, var(--t-primary-dark) 12%, transparent);
+  --color-border-accent: color-mix(in srgb, var(--t-electric-cyan) 35%, transparent);
+  --color-border-focus: var(--t-electric-cyan);
+
+  /* Typography — Sora (display) + Manrope (body), self-hosted */
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Layout */
+  --container-width: 80rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Shadows / glows */
+  --shadow-card: 0 8px 24px 0 rgb(2 8 20 / 0.45);
+  --shadow-modal: 0 24px 64px 0 rgb(2 8 20 / 0.6);
+  --glow-cyan: 0 0 24px 0 color-mix(in srgb, var(--t-electric-cyan) 22%, transparent);
+  --glow-violet: 0 0 24px 0 color-mix(in srgb, var(--t-ultraviolet) 22%, transparent);
+
+  /* Motion (CSS side — JS motion tokens live in src/lib/motion) */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Breakpoints */
+  --breakpoint-xl: 90rem;
+  --breakpoint-3xl: 120rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
   }
 }
 
+/* Self-hosted variable fonts (public/fonts) */
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/sora-latin-ext-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/sora-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-ext-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-wght-normal.woff2") format("woff2");
+}
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-obsidian);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--t-electric-cyan) 30%, transparent);
+  color: var(--t-ice-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Type classes — semantic scale (see docs/design/DESIGN-SYSTEM.md)
+ * ------------------------------------------------------------------------- */
+
+.type-display {
+  font-family: var(--font-display);
+  font-size: 3.75rem;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.type-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 1.5rem + 4.5vw, 4.75rem);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.type-product-hero {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.type-section {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.1rem + 1.25vw, 2rem);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.type-h3 {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.type-lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.type-body-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.type-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.type-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.type-label {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Custom shadow/glow utilities (namespaced --glow-* is not a Tailwind theme
+ * namespace, so register the utilities explicitly). */
+@utility glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+@utility glow-violet {
+  box-shadow: var(--glow-violet);
+}
+
+/* ---------------------------------------------------------------------------
+ * Light theme.
+ *
+ * The neutral BASE palette is remapped (not the semantic tokens alone) so
+ * both the semantic tokens (--color-*) AND the raw palette utilities used
+ * across the product visuals (bg-obsidian, bg-deep-navy, text-ice-white, …)
+ * adapt together. `body` reads --color-obsidian, so this is what makes the
+ * page background flip — overriding only --color-background would not.
+ *
+ * Brand accents keep their hue but are darkened to meet AA contrast on light
+ * surfaces (the dark-mode values are tuned for dark backgrounds).
+ * ------------------------------------------------------------------------- */
+[data-theme="light"] {
+  /* Neutral base remap */
+  --t-obsidian: #f5f8fc;        /* page background */
+  --t-deep-navy: #ffffff;       /* surface (cards) */
+  --t-deep-navy-raised: #eef2f9; /* surface-elevated */
+  --t-ice-white: #0a1220;       /* primary text */
+  --t-primary-dark: #ffffff;    /* inverted text (on primary) */
+  --t-muted: #55647a;           /* muted text */
+
+  /* Accents re-tuned for light backgrounds (hue preserved) */
+  --color-primary: #0b8ea1;
+  --color-primary-hover: #0a7a8b;
+  --color-secondary: #5b46e0;
+  --color-secondary-soft: #5b46e0;
+  --color-success: #0f8a63;
+  --color-warning: #a15c00;
+  --color-danger: #c22a3c;
+
+  /* Borders are theme-tuned mixes, not a palette inversion */
+  --color-border: color-mix(in srgb, #0a1220 14%, transparent);
+  --color-border-strong: color-mix(in srgb, #0a1220 24%, transparent);
+  --color-border-light: color-mix(in srgb, #0a1220 10%, transparent);
+  --color-border-accent: color-mix(in srgb, #5b46e0 35%, transparent);
+  --color-border-focus: #5b46e0;
+
+  /* Softer elevation for light surfaces */
+  --shadow-card: 0 8px 24px 0 rgb(10 18 32 / 0.1);
+  --shadow-modal: 0 24px 64px 0 rgb(10 18 32 / 0.18);
 }
