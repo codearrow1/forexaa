@@ -1,0 +1,33 @@
+
+> forexaa@0.1.0 dev
+> next dev -p 3210
+
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://localhost:3210
+- Network:       http://10.147.27.237:3210
+✓ Ready in 5.5s
+✓ Running next.config.ts took 386ms
+
+○ Compiling / ...
+ GET / 200 in 4.2s (next.js: 3.5s, proxy.ts: 8ms, application-code: 659ms)
+ GET / 200 in 208ms (next.js: 29ms, proxy.ts: 8ms, application-code: 172ms)
+ GET / 200 in 153ms (next.js: 14ms, proxy.ts: 7ms, application-code: 133ms)
+ GET / 200 in 133ms (next.js: 12ms, proxy.ts: 13ms, application-code: 108ms)
+ GET /company 200 in 1241ms (next.js: 1120ms, proxy.ts: 14ms, application-code: 106ms)
+✓ Compiled in 414ms
+✓ Compiled in 138ms
+ GET / 200 in 638ms (next.js: 147ms, proxy.ts: 107ms, application-code: 385ms)
+ GET / 200 in 175ms (next.js: 8ms, proxy.ts: 4ms, application-code: 163ms)
+ GET /robots.txt 200 in 1328ms (next.js: 1265ms, proxy.ts: 9ms, application-code: 54ms)
+ GET / 200 in 201ms (next.js: 87ms, proxy.ts: 26ms, application-code: 88ms)
+ GET / 200 in 170ms (next.js: 11ms, proxy.ts: 7ms, application-code: 152ms)
+✓ Compiled in 598ms
+✓ Compiled in 183ms
+✓ Compiled in 132ms
+✓ Compiled in 328ms
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://localhost:3210
+- Network:       http://10.147.27.237:3210
+✓ Ready in 1362ms
+✓ Running next.config.ts took 134ms
+

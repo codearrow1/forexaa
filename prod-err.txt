@@ -1,0 +1,56 @@
+Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/new-brokerage" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/new-brokerage" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/new-brokerage" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/existing-broker" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/existing-broker" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/existing-broker" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/prop-firm" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/prop-firm" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/prop-firm" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/multi-asset" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/multi-asset" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/solutions/multi-asset" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/platforms/mt4-mt5" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/platforms/mt4-mt5" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/platforms/mt4-mt5" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/infrastructure/liquidity" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/infrastructure/liquidity" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/infrastructure/liquidity" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
+Error [InvariantError]: Invariant: The client reference manifest for route "/services/white-label" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/services/white-label" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error [InvariantError]: Invariant: The client reference manifest for route "/services/white-label" does not exist. This is a bug in Next.js.
+    at Object.get (C:\Users\Asus\Documents\forexaa\.next\server\chunks\ssr\[root-of-the-server]__02zj8y0._.js:12:1760)
+⨯ Error: Failed to load static file for page: /500 ENOENT: no such file or directory, open 'C:\Users\Asus\Documents\forexaa\.next\server\pages\500.html'
+    at ignore-listed frames
