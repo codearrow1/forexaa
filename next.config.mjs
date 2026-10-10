@@ -6,6 +6,7 @@
 // intersection of both policies, blocking the nonce'd inline RSC flight
 // scripts (React #412, no hydration).
 const nextConfig = {
+  output: "standalone",
   poweredByHeader: false,
 
   async redirects() {
