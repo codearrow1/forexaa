@@ -1,6 +1,18 @@
 import { describe, it, expect } from "vitest";
-import nextConfig from "../../next.config";
+import { createRequire } from "node:module";
 import { routeByPath } from "@/config/seo/routes";
+
+const require = createRequire(import.meta.url);
+const mod = require("../../next.config.mjs") as {
+  default: { redirects?: () => Promise<readonly { source: string; destination: string; permanent: boolean }[]> };
+};
+const nextConfig = mod.default;
+
+type Redirect = {
+  source: string;
+  destination: string;
+  permanent: boolean;
+};
 
 /**
  * Redirect tests (Rule 42 / 71): legacy 301s must be a static allowlist —
@@ -8,8 +20,8 @@ import { routeByPath } from "@/config/seo/routes";
  * live routes, and every destination must exist and be live.
  */
 describe("legacy redirects", () => {
-  const redirects = nextConfig.redirects
-    ? nextConfig.redirects()
+  const redirects: Promise<Redirect[]> = nextConfig.redirects
+    ? (nextConfig.redirects() as Promise<Redirect[]>)
     : Promise.resolve([]);
 
   it("all redirects are permanent 301s", async () => {

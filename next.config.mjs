@@ -1,11 +1,11 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
 
 // Security headers (CSP with per-request nonce, HSTS, etc.) are set by the
 // network boundary in src/proxy.ts — NOT here. Adding them here as well would
 // emit a second CSP without the nonce, and the browser enforces the
 // intersection of both policies, blocking the nonce'd inline RSC flight
 // scripts (React #412, no hydration).
-const nextConfig: NextConfig = {
+const nextConfig = {
   poweredByHeader: false,
 
   async redirects() {
